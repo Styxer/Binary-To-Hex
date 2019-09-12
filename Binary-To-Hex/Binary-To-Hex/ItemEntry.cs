@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Binary_To_Hex
 {
-    public  class ItemEntry
+    public  class CheckBoxEntry
     {
-        public ItemEntry(int name, bool isSelected)
+        public CheckBoxEntry(int name, bool isSelected)
         {
             Name = name;
             IsSelected = isSelected;
@@ -17,6 +17,6 @@ namespace Binary_To_Hex
 
         public int Name { get; set; }
         public bool IsSelected { get; set; }
-        DelegateCommand<string> CheckedChnaged;
+      
     }
 }

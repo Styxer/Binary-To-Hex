@@ -17,8 +17,8 @@ namespace Binary_To_Hex.ViewModels
             set { SetProperty(ref _hexNumber, value); }
         }
 
-        private ObservableCollection<ItemEntry> _extensionGroups;
-        public  ObservableCollection<ItemEntry> ExtensionGroups
+        private ObservableCollection<CheckBoxEntry> _extensionGroups;
+        public  ObservableCollection<CheckBoxEntry> ExtensionGroups
         {
             get { return _extensionGroups; }
             set { SetProperty(ref _extensionGroups, value); }
@@ -35,11 +35,11 @@ namespace Binary_To_Hex.ViewModels
 
         public MainWindowViewModel()
         {
-            _extensionGroups = new ObservableCollection<ItemEntry>();
+            _extensionGroups = new ObservableCollection<CheckBoxEntry>();
 
             for (int i = 0; i < 32; i++)
             {
-                ExtensionGroups.Add(new ItemEntry(i, true));
+                ExtensionGroups.Add(new CheckBoxEntry(i, true));
             }
 
             CheckedChnaged = new DelegateCommand(CheckedChnagedExecute);
