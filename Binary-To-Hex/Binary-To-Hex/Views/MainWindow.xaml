@@ -1,0 +1,42 @@
+﻿<Window x:Class="Binary_To_Hex.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="{Binding Title}" Height="550" Width="525"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+>
+    <StackPanel Orientation="Horizontal">
+        <ItemsControl ItemsSource="{Binding Path=ExtensionGroups}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Content="{Binding Name}" IsChecked="{Binding IsSelected}" >
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Checked">
+                                <prism:InvokeCommandAction 
+                                 Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, 
+                                 Path=DataContext.CheckedChnaged}"/>
+                            </i:EventTrigger>
+                            <i:EventTrigger EventName="Unchecked">
+                                <prism:InvokeCommandAction 
+                                 Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, 
+                                 Path=DataContext.CheckedChnaged}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </CheckBox>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+
+        <Label FontSize="50" Content="{Binding HexNumber , Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50"/>
+
+    </StackPanel>
+
+
+
+  
+    
+</Window>
+
+  
