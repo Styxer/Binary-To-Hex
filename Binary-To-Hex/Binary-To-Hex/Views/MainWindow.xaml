@@ -5,38 +5,62 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         Title="{Binding Title}" Height="550" Width="525"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
->
-    <StackPanel Orientation="Horizontal">
-        <ItemsControl ItemsSource="{Binding Path=ExtensionGroups}">
+        xmlns:local="clr-namespace:Binary_To_Hex"
+      
+      >
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        
+
+    </Window.Resources>
+
+    <StackPanel Orientation="Vertical">
+        <Label FontSize="50" Content="{Binding HexNumber , Mode=TwoWay}" 
+               VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50" />
+        <ItemsControl ItemsSource="{Binding ExtensionGroupsMaster}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate >
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <CheckBox Content="{Binding Name}" IsChecked="{Binding IsSelected}" >
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="Checked">
-                                <prism:InvokeCommandAction 
-                                 Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, 
-                                 Path=DataContext.CheckedChnaged}"/>
-                            </i:EventTrigger>
-                            <i:EventTrigger EventName="Unchecked">
-                                <prism:InvokeCommandAction 
-                                 Command="{Binding RelativeSource={RelativeSource AncestorType=ItemsControl}, 
-                                 Path=DataContext.CheckedChnaged}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </CheckBox>
+                    <ItemsControl ItemsSource="{Binding ExtensionGroup}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate >
+                           
+                                <Button Content="{Binding Name}"                                    
+                                    Margin="30,2" Width="50"  Height="50" FontSize="20"
+                                    Foreground="{Binding  Brush}"
+                                    BorderThickness="0"
+                                    Background="Transparent"
+                                  
+                                    >
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Click">
+                                            <prism:InvokeCommandAction 
+                                 Command="{ Binding ClickCmd}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                    
+                                  
+                                </Button>                                
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-
-
-        <Label FontSize="50" Content="{Binding HexNumber , Mode=TwoWay}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="50"/>
-
     </StackPanel>
 
 
 
-  
-    
+
+
+
+
+
+
 </Window>
 
   

@@ -64,9 +64,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ExtensionGroup.cs" />
-    <Compile Include="ExtensionInfo.cs" />
-    <Compile Include="ItemEntry.cs" />
+    <Compile Include="BooleanToColorConverter.cs" />
+    <Compile Include="CheckBoxChangedEvent.cs" />
+    <Compile Include="ExtensionGroupsEntry.cs" />
+    <Compile Include="CheckBoxEntry.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

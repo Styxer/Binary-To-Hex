@@ -11,5 +11,6 @@ namespace Binary_To_Hex.Views
         {
             InitializeComponent();
         }
+
     }
 }

@@ -30,3 +30,4 @@ C:\Users\ofir pc\source\repos\Binary-To-Hex\Binary-To-Hex\Binary-To-Hex\bin\Debu
 C:\Users\ofir pc\source\repos\Binary-To-Hex\Binary-To-Hex\Binary-To-Hex\bin\Debug\GalaSoft.MvvmLight.dll
 C:\Users\ofir pc\source\repos\Binary-To-Hex\Binary-To-Hex\Binary-To-Hex\bin\Debug\GalaSoft.MvvmLight.pdb
 C:\Users\ofir pc\source\repos\Binary-To-Hex\Binary-To-Hex\Binary-To-Hex\obj\Debug\Binary-To-Hex.exe.config
+C:\Users\ofir pc\source\repos\Binary-To-Hex\Binary-To-Hex\Binary-To-Hex\obj\Debug\Binary-To-Hex_MarkupCompile.lref
